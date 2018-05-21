@@ -17,7 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
+                <!-- Repeater Html Start -->
                 <div id="repeater">
+                    <!-- Repeater Heading -->
                     <div class="repeater-heading">
                         <h5 class="pull-left">Repeater</h5>
                         <button class="btn btn-primary pt-5 pull-right repeater-add-btn">
@@ -25,7 +27,9 @@
                         </button>
                     </div>
                     <div class="clearfix"></div>
+                    <!-- Repeater Items -->
                     <div class="items" data-group="test">
+                        <!-- Repeater Content -->
                         <div class="item-content">
                             <div class="form-group">
                                 <label for="inputEmail" class="col-lg-2 control-label">Name</label>
@@ -40,6 +44,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Repeater Remove Btn -->
                         <div class="pull-right repeater-remove-btn">
                             <button id="remove-btn" class="btn btn-danger" onclick="$(this).parents('.items').remove()">
                                 Remove
@@ -48,13 +53,14 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
+                <!-- Repeater End -->
             </div>
         </div>
     </div>
-
+    <!-- Import repeater js  -->
     <script src="./repeater.js" type="text/javascript"></script>
     <script>
-        /* create repeater */
+        /* Create Repeater */
         $("#repeater").createRepeater();
     </script>
 </body>
