@@ -24,16 +24,16 @@ jQuery.fn.extend({
         var items = repeater.find(".items");
         var key = 0;
         var addButton = repeater.find('.repeater-add-btn');
-        var firstItem = items;
+        var newItem = items;
         if (key == 0) {
             items.remove();
-            addItem(firstItem, key);
+            addItem(newItem, key);
         }
 
         /* handle click and add items */
         addButton.on("click", function () {
             key++;
-            addItem(firstItem, key);
+            addItem(newItem, key);
         });
     }
 });
