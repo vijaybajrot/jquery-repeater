@@ -17,6 +17,16 @@ jQuery.fn.extend({
                 }
             })
             var itemClone = items;
+
+            /* Handling remove btn */
+            var removeButton = itemClone.find('.remove-btn');
+
+            if (key == 0) {
+                removeButton.attr('disabled', true);
+            } else {
+                removeButton.attr('disabled', false);
+            }
+
             $("<div class='items'>" + itemClone.html() + "<div/>").appendTo(repeater);
         };
         /* find elements */
@@ -25,6 +35,7 @@ jQuery.fn.extend({
         var key = 0;
         var addButton = repeater.find('.repeater-add-btn');
         var newItem = items;
+
         if (key == 0) {
             items.remove();
             addItem(newItem, key);
