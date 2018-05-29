@@ -36,15 +36,16 @@ jQuery.fn.extend({
         var addButton = repeater.find('.repeater-add-btn');
         var newItem = items;
 
-        if (key == 0) {
+        items.each(function () {
             items.remove();
             addItem(newItem, key);
-        }
+            key++;
+        });
 
         /* handle click and add items */
         addButton.on("click", function () {
-            key++;
             addItem(newItem, key);
+            key++;
         });
     }
 });
