@@ -1,6 +1,6 @@
 jQuery.fn.extend({
     createRepeater: function () {
-        var addItem = function (items, key) {
+        var addItem = function (items, key, fresh = true) {
             var itemContent = items;
             var group = itemContent.data("group");
             var item = itemContent;
@@ -14,6 +14,9 @@ jQuery.fn.extend({
                     if (attrName != 'undefined') {
                         $(el).attr("name", attrName);
                     }
+                }
+                if (fresh == true) {
+                    $(el).attr('value', '');
                 }
             })
             var itemClone = items;
@@ -36,15 +39,15 @@ jQuery.fn.extend({
         var addButton = repeater.find('.repeater-add-btn');
         var newItem = items;
 
-        items.each(function () {
+        items.each(function (index, item) {
             items.remove();
-            addItem(newItem, key);
+            addItem($(item), key);
             key++;
         });
 
         /* handle click and add items */
         addButton.on("click", function () {
-            addItem(newItem, key);
+            addItem($(items[0]), key);
             key++;
         });
     }
