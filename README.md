@@ -7,4 +7,6 @@ jQuery Repeater is a basic repeater depends on jquery 3.3.1.
 ## Usage
 
 ```javascript
- $("#repeater").createRepeater();
+$("#repeater").createRepeater({
+    showFirstItemToDefault: true,
+});
