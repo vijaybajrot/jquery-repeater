@@ -36,7 +36,7 @@ jQuery Repeater is a basic repeater depends on jquery 3.3.1.
         </div>
         <!-- Repeater Remove Btn -->
         <div class="pull-right repeater-remove-btn">
-            <button class="btn btn-danger remove-btn" onclick="$(this).parents('.items').remove()">
+            <button class="btn btn-danger remove-btn">
                 Remove
             </button>
         </div>
