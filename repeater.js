@@ -36,6 +36,8 @@ jQuery.fn.extend({
                 removeButton.attr('disabled', false);
             }
 
+            removeButton.attr('onclick', '$(this).parents(\'.items\').remove()');
+
             $("<div class='items'>" + itemClone.html() + "<div/>").appendTo(repeater);
         };
         /* find elements */
