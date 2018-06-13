@@ -1,5 +1,11 @@
 jQuery.fn.extend({
-    createRepeater: function () {
+    createRepeater: function (options = {}) {
+        var hasOption = function (optionKey) {
+            return options.hasOwnProperty(optionKey);
+        };
+        var option = function (optionKey) {
+            return options[optionKey];
+        };
         var addItem = function (items, key, fresh = true) {
             var itemContent = items;
             var group = itemContent.data("group");
@@ -37,12 +43,18 @@ jQuery.fn.extend({
         var items = repeater.find(".items");
         var key = 0;
         var addButton = repeater.find('.repeater-add-btn');
-        var newItem = items;
 
         items.each(function (index, item) {
             items.remove();
-            addItem($(item), key);
-            key++;
+            if (hasOption('showFirstItemToDefault') && option('showFirstItemToDefault') == true) {
+                addItem($(item), key);
+                key++;
+            } else {
+                if (items.length > 5) {
+                    addItem($(item), key);
+                    key++;
+                }
+            }
         });
 
         /* handle click and add items */
