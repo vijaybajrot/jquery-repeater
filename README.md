@@ -2,7 +2,7 @@
 
 #### Basic jQuery Repeater
 
-jQuery Repeater is a basic repeater depends on jquery 3.3.1.
+jQuery Repeater is a basic repeater depends on jquery 2.* or above.
 
 ## Usage
 **Html**
@@ -19,7 +19,7 @@ jQuery Repeater is a basic repeater depends on jquery 3.3.1.
     <div class="clearfix"></div>
     <!-- Repeater Items -->
     <div class="items" data-group="test">
-        <!-- Repeater Content -->
+        <!-- Repeater Item Content -->
         <div class="item-content">
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Name</label>
