@@ -6,7 +6,7 @@ jQuery Repeater is a basic repeater depends on jquery 3.3.1.
 
 ## Usage
 **Html**
-``html
+```html
 <!-- Repeater Html Start -->
 <div id="repeater">
     <!-- Repeater Heading -->
