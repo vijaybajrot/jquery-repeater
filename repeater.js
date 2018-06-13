@@ -50,7 +50,7 @@ jQuery.fn.extend({
                 addItem($(item), key);
                 key++;
             } else {
-                if (items.length > 5) {
+                if (items.length > 1) {
                     addItem($(item), key);
                     key++;
                 }
