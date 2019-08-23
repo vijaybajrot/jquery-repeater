@@ -3,19 +3,29 @@ jQuery.fn.extend({
         var hasOption = function (optionKey) {
             return options.hasOwnProperty(optionKey);
         };
+
         var option = function (optionKey) {
             return options[optionKey];
         };
+
+        var generateId = function (string) {
+            return string
+                .replace(/\[/g, '-')
+                .replace(/\]/g, '-')
+                .toLowerCase();
+        };
+
         var addItem = function (items, key, fresh = true) {
             var itemContent = items;
             var group = itemContent.data("group");
             var item = itemContent;
             var input = item.find('input,select');
+
             input.each(function (index, el) {
                 var attrName = $(el).data('name');
                 var skipName = $(el).data('skip-name');
                 if (skipName != true) {
-                    $(el).attr("name", group + "[" + key + "]" + attrName);
+                    $(el).attr("name", group + "[" + key + "]" + "[" + attrName + "]");
                 } else {
                     if (attrName != 'undefined') {
                         $(el).attr("name", attrName);
@@ -24,7 +34,11 @@ jQuery.fn.extend({
                 if (fresh == true) {
                     $(el).attr('value', '');
                 }
+
+                $(el).attr('id', generateId($(el).attr('name')));
+                $(el).parent().find('label').attr('for', generateId($(el).attr('name')));
             })
+
             var itemClone = items;
 
             /* Handling remove btn */
@@ -38,8 +52,12 @@ jQuery.fn.extend({
 
             removeButton.attr('onclick', '$(this).parents(\'.items\').remove()');
 
-            $("<div class='items'>" + itemClone.html() + "<div/>").appendTo(repeater);
+            var newItem = $("<div class='items'>" + itemClone.html() + "<div/>");
+            newItem.attr('data-index', key)
+
+            newItem.appendTo(repeater);
         };
+
         /* find elements */
         var repeater = this;
         var items = repeater.find(".items");
