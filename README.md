@@ -22,7 +22,7 @@ jQuery Repeater is a basic repeater depends on jquery 2.* or above.
         <!-- Repeater Item Content -->
         <div class="item-content">
             <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+                <label for="inputName" class="col-lg-2 control-label">Name</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" id="inputName" placeholder="Name" data-name="name">
                 </div>
