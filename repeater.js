@@ -10,8 +10,8 @@ jQuery.fn.extend({
 
         var generateId = function (string) {
             return string
-                .replace(/\[/g, '-')
-                .replace(/\]/g, '-')
+                .replace(/\[/g, '_')
+                .replace(/\]/g, '')
                 .toLowerCase();
         };
 
