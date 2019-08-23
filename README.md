@@ -12,7 +12,7 @@ jQuery Repeater is a basic repeater depends on jquery 2.* or above.
     <!-- Repeater Heading -->
     <div class="repeater-heading">
         <h5 class="pull-left">Repeater</h5>
-        <button class="btn btn-primary pt-5 pull-right repeater-add-btn">
+        <button type="button" class="btn btn-primary pt-5 pull-right repeater-add-btn">
             Add
         </button>
     </div>
@@ -36,7 +36,7 @@ jQuery Repeater is a basic repeater depends on jquery 2.* or above.
         </div>
         <!-- Repeater Remove Btn -->
         <div class="pull-right repeater-remove-btn">
-            <button class="btn btn-danger remove-btn">
+            <button type="button" class="btn btn-danger remove-btn">
                 Remove
             </button>
         </div>
