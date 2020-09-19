@@ -19,7 +19,7 @@ jQuery.fn.extend({
             var itemContent = items;
             var group = itemContent.data("group");
             var item = itemContent;
-            var input = item.find('input,select');
+            var input = item.find('input,select,textarea');
 
             input.each(function (index, el) {
                 var attrName = $(el).data('name');
