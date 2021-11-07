@@ -15,7 +15,7 @@ jQuery.fn.extend({
                 .toLowerCase();
         };
 
-        var addItem = function (items, key, fresh = true) {
+        var addItem = function (items, key, fresh = false) {
             var itemContent = items;
             var group = itemContent.data("group");
             var item = itemContent;
@@ -79,7 +79,7 @@ jQuery.fn.extend({
 
         /* handle click and add items */
         addButton.on("click", function () {
-            addItem($(items[0]), key);
+            addItem($(items[0]), key, true);
             key++;
         });
     }
